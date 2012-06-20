@@ -43,6 +43,6 @@ Running the test suite is as easy as running ``py.test`` from the source directo
 .. _Bootstrap Carousel: http://twitter.github.com/bootstrap/javascript.html#carousel
 .. _Find out more about Kotti: http://pypi.python.org/pypi/Kotti
 .. _`plone.scale`: http://pypi.python.org/pypi/plone.scale/1.2.2
-.. _Github repository: https://github.com/disko/kotti_image_gallery
+.. _Github repository: https://github.com/disko/kotti_gallery
 .. _gitflow: https://github.com/nvie/gitflow
 .. _A successful Git branching model: http://nvie.com/posts/a-successful-git-branching-model/

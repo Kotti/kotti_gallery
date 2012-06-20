@@ -1,11 +1,11 @@
-kotti_image_gallery browser tests
-=================================
+kotti_gallery browser tests
+===========================
 
 Setup and Login
 ---------------
   >>> from kotti import testing
   >>> tools = testing.setUpFunctional(
-  ...     **{'kotti.configurators': 'kotti_image_gallery.kotti_configure'})
+  ...     **{'kotti.configurators': 'kotti_gallery.kotti_configure'})
   >>> browser = tools['Browser']()
   >>> ctrl = browser.getControl
 
@@ -79,8 +79,8 @@ Image 2
   >>> "Successfully added item" in browser.contents
   True
 
-View gallery and images
------------------------
+View gallery
+------------
 
   >>> browser.open(testing.BASE_URL + '/my-gallery/')
   >>> pos = browser.contents.index
@@ -88,11 +88,5 @@ View gallery and images
   True
   >>> "A beautiful image" in browser.contents
   True
-  >>> browser.getLink("Image 2").click()
   >>> "An even more beautiful image" in browser.contents
   True
-
-  >>> browser.open(testing.BASE_URL + '/my-gallery/image-1')
-  >>> browser.headers["content-type"].lower()
-  'text/html; charset=utf-8'
-

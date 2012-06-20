@@ -1,0 +1,5 @@
+include README.rst
+include CHANGES.txt
+include TODO.txt
+recursive-include kotti_gallery/templates *
+recursive-include kotti_gallery/static *

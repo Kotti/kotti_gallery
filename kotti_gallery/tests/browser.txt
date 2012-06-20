@@ -1,0 +1,98 @@
+kotti_image_gallery browser tests
+=================================
+
+Setup and Login
+---------------
+  >>> from kotti import testing
+  >>> tools = testing.setUpFunctional(
+  ...     **{'kotti.configurators': 'kotti_image_gallery.kotti_configure'})
+  >>> browser = tools['Browser']()
+  >>> ctrl = browser.getControl
+
+  >>> browser.open(testing.BASE_URL + '/edit')
+  >>> "Log in" in browser.contents
+  True
+  >>> ctrl("Username or email").value = "admin"
+  >>> ctrl("Password").value = "secret"
+  >>> ctrl(name="submit").click()
+  >>> "Welcome, Administrator" in browser.contents
+  True
+
+Add a gallery
+--------------
+
+  >>> browser.getLink("Add").click()
+  >>> browser.getLink("Gallery").click()
+  >>> ctrl("Title").value = "My Gallery"
+  >>> ctrl("save").click()
+  >>> "Successfully added item" in browser.contents
+  True
+  >>> browser.url == testing.BASE_URL + '/my-gallery/'
+  True
+
+Edit a gallery
+---------------
+
+  >>> browser.open(testing.BASE_URL + '/my-gallery/')
+  >>> browser.getLink("Edit").click()
+  >>> ctrl("Title").value = "Your Gallery"
+  >>> ctrl("save").click()
+  >>> "Your changes have been saved" in browser.contents
+  True
+  >>> "Your Gallery" in browser.contents
+  True
+  >>> browser.url == testing.BASE_URL + '/my-gallery/'
+  True
+
+Add images
+----------
+
+  >>> import os
+  >>> from kotti_gallery import tests
+  >>> image = open(os.sep.join((os.path.dirname(tests.__file__), "sendeschluss.jpg"))).read()
+
+Image 1
+
+  >>> browser.open(testing.BASE_URL + '/my-gallery/')
+  >>> browser.getLink("Add").click()
+  >>> browser.getLink("Image").click()
+
+  >>> ctrl("Title").value = "Image 1"
+  >>> ctrl("Description").value = "A beautiful image"
+  >>> ctrl("File").add_file(image, 'image/jpeg', 'sendeschluss.jpg')
+
+  >>> ctrl("save").click()
+  >>> "Successfully added item" in browser.contents
+  True
+
+Image 2
+
+  >>> browser.open(testing.BASE_URL + '/my-gallery/')
+  >>> browser.getLink("Add").click()
+  >>> browser.getLink("Image").click()
+
+  >>> ctrl("Title").value = "Image 2"
+  >>> ctrl("Description").value = "An even more beautiful image"
+  >>> ctrl("File").add_file(image, 'image/jpeg', 'sendeschluss.jpg')
+
+  >>> ctrl("save").click()
+  >>> "Successfully added item" in browser.contents
+  True
+
+View gallery and images
+-----------------------
+
+  >>> browser.open(testing.BASE_URL + '/my-gallery/')
+  >>> pos = browser.contents.index
+  >>> pos("Image 1") < pos("Image 2")
+  True
+  >>> "A beautiful image" in browser.contents
+  True
+  >>> browser.getLink("Image 2").click()
+  >>> "An even more beautiful image" in browser.contents
+  True
+
+  >>> browser.open(testing.BASE_URL + '/my-gallery/image-1')
+  >>> browser.headers["content-type"].lower()
+  'text/html; charset=utf-8'
+

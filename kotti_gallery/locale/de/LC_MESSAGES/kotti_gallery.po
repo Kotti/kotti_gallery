@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kotti_gallery 0.2\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-11-21 18:46+0100\n"
+"POT-Creation-Date: 2012-11-21 18:55+0100\n"
 "PO-Revision-Date: 2012-11-21 18:48+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -45,4 +45,20 @@ msgstr "6 Spalten"
 #: kotti_gallery/resources.py:26
 msgid "12 Columns"
 msgstr "12 Spalten"
+
+#: kotti_gallery/templates/modal.pt:10
+msgid "Download"
+msgstr "Herunterladen"
+
+#: kotti_gallery/templates/modal.pt:14
+msgid "Slideshow"
+msgstr "Diashow"
+
+#: kotti_gallery/templates/modal.pt:18
+msgid "Previous"
+msgstr "Vorheriges"
+
+#: kotti_gallery/templates/modal.pt:21
+msgid "Next"
+msgstr "Nächstes"
 

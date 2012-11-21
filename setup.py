@@ -60,4 +60,11 @@ setup(
     extras_require={
         'testing': tests_require,
     },
+    message_extractors={
+        'kotti_gallery': [
+            ('**.py', 'lingua_python', None),
+            ('**.zcml', 'lingua_xml', None),
+            ('**.pt', 'lingua_xml', None),
+        ],
+    },
 )

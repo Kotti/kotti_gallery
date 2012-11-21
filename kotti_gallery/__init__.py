@@ -8,6 +8,10 @@ _ = TranslationStringFactory('kotti_gallery')
 
 def kotti_configure(settings):
 
-    settings['pyramid.includes'] += ' kotti_gallery.views'
+    settings['pyramid.includes'] += ' kotti_gallery kotti_gallery.views'
     settings['kotti.available_types'] += ' kotti_gallery.resources.Gallery'
     Image.type_info.addable_to.append('Gallery')
+
+
+def includeme(config):
+    config.add_translation_dirs('kotti_gallery:locale')

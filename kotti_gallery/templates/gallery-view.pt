@@ -9,10 +9,10 @@
       ${context.description}
     </p>
     <ul class="thumbnails" data-toggle="modal-gallery" data-target="#modal-gallery" data-selector=".thumbnail img">
-      <li class="span4" tal:repeat="img images">
+      <li class="span${img_span}" tal:repeat="img images">
         <a href="#" class="thumbnail">
-          <img src="${request.resource_url(img)}/image/span4"
-               data-href="${request.resource_url(img)}/image" alt="">
+          <img src="${request.resource_url(img)}image/span${img_span}"
+               data-href="${request.resource_url(img)}image" alt="" />
         </a>
       </li>
     </ul>

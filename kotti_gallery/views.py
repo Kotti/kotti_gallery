@@ -27,6 +27,43 @@ class GalleryView(object):
 
         self.context = context
         self.request = request
+        self.span = 4
+
+    @view_config(context=Gallery, name='span1', permission='view',
+                 renderer='templates/gallery-view.pt')
+    def span1(self):
+        self.span = 1
+        return self.view()
+
+    @view_config(context=Gallery, name='span2', permission='view',
+                 renderer='templates/gallery-view.pt')
+    def span2(self):
+        self.span = 2
+        return self.view()
+
+    @view_config(context=Gallery, name='span3', permission='view',
+                 renderer='templates/gallery-view.pt')
+    def span3(self):
+        self.span = 3
+        return self.view()
+
+    @view_config(context=Gallery, name='span4', permission='view',
+                 renderer='templates/gallery-view.pt')
+    def span4(self):
+        self.span = 4
+        return self.view()
+
+    @view_config(context=Gallery, name='span6', permission='view',
+                 renderer='templates/gallery-view.pt')
+    def span6(self):
+        self.span = 6
+        return self.view()
+
+    @view_config(context=Gallery, name='span12', permission='view',
+                 renderer='templates/gallery-view.pt')
+    def span12(self):
+        self.span = 12
+        return self.view()
 
     @view_config(context=Gallery,
                  name='view',
@@ -38,7 +75,7 @@ class GalleryView(object):
 
         images = self.context.children_with_permission(self.request)
 
-        return {"images": images}
+        return {"images": images, "img_span": self.span}
 
 
 def includeme(config):

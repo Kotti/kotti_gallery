@@ -84,3 +84,14 @@ View gallery
 
   >>> browser.open(testing.BASE_URL + '/my-gallery/')
   >>> pos = browser.contents.index
+
+Change the default views
+------------------------
+
+  >>> browser.open(testing.BASE_URL + '/my-gallery/set-default-view?view_name=span1')
+  >>> browser.open(testing.BASE_URL + '/my-gallery/set-default-view?view_name=span2')
+  >>> browser.open(testing.BASE_URL + '/my-gallery/set-default-view?view_name=span3')
+  >>> browser.open(testing.BASE_URL + '/my-gallery/set-default-view?view_name=span4')
+  >>> browser.open(testing.BASE_URL + '/my-gallery/set-default-view?view_name=span6')
+  >>> browser.open(testing.BASE_URL + '/my-gallery/set-default-view?view_name=span12')
+  >>> browser.open(testing.BASE_URL + '/my-gallery/set-default-view?view_name=default')

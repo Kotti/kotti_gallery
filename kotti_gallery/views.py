@@ -1,16 +1,24 @@
 # -*- coding: utf-8 -*-
 
-from kotti import DBSession
-from kotti.resources import Image
+from js.bootstrap_image_gallery import gallery
 from kotti.views.edit import ContentSchema
-from kotti.views.edit import make_generic_add
-from kotti.views.edit import make_generic_edit
+from kotti.views.form import AddFormView
+from kotti.views.form import EditFormView
 from pyramid.view import view_config
-from resources import Gallery
+
+from kotti_gallery import _
+from kotti_gallery.resources import Gallery
 
 
-class GallerySchema(ContentSchema):
-    pass
+class GalleryEditForm(EditFormView):
+    schema_factory = ContentSchema
+
+
+class GalleryAddForm(AddFormView):
+
+    schema_factory = ContentSchema
+    add = Gallery
+    item_type = _(u"Gallery")
 
 
 class GalleryView(object):
@@ -26,26 +34,28 @@ class GalleryView(object):
                  renderer='templates/gallery-view.pt')
     def view(self):
 
-        session = DBSession()
-        query = session.query(Image)\
-                       .filter(Image.parent_id == self.context.id)\
-                       .order_by(Image.position)
-        images = query.all()
+        gallery.need()
+
+        images = self.context.children_with_permission(self.request)
 
         return {"images": images}
 
 
 def includeme(config):
 
-    config.scan("kotti_gallery")
+    config.scan(__name__)
 
-    config.add_view(make_generic_edit(GallerySchema()),
-                    context=Gallery,
-                    name='edit',
-                    permission='edit',
-                    renderer='kotti:templates/edit/node.pt', )
+    config.add_view(
+        GalleryEditForm,
+        context=Gallery,
+        name='edit',
+        permission='edit',
+        renderer='kotti:templates/edit/node.pt',
+        )
 
-    config.add_view(make_generic_add(GallerySchema(), Gallery),
-                    name=Gallery.type_info.add_view,
-                    permission='add',
-                    renderer='kotti:templates/edit/node.pt', )
+    config.add_view(
+        GalleryAddForm,
+        name=Gallery.type_info.add_view,
+        permission='add',
+        renderer='kotti:templates/edit/node.pt',
+        )

@@ -5,21 +5,25 @@
   </div>
   <div class="modal-body"><div class="modal-image"></div></div>
   <div class="modal-footer">
-      <a class="btn modal-download" target="_blank">
+    <div class="pull-left">
+      <a class="btn btn-small modal-download" target="_blank">
           <i class="icon-download"></i>
           <span i18n:translate="">Download</span>
       </a>
-      <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000">
-          <i class="icon-play icon-white"></i>
+      <a class="btn btn-small modal-play modal-slideshow" data-slideshow="5000">
+          <i class="icon-play"></i>
           <span i18n:translate="">Slideshow</span>
       </a>
-      <a class="btn btn-info modal-prev">
-          <i class="icon-arrow-left icon-white"></i>
+    </div>
+    <div class="pull-right">
+      <a class="btn btn-small modal-prev">
+          <i class="icon-arrow-left"></i>
           <span i18n:translate="">Previous</span>
       </a>
-      <a class="btn btn-primary modal-next">
+      <a class="btn btn-small modal-next">
           <span i18n:translate="">Next</span>
-          <i class="icon-arrow-right icon-white"></i>
+          <i class="icon-arrow-right"></i>
       </a>
+    </div>
   </div>
 </div>

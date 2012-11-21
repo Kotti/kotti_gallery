@@ -10,39 +10,42 @@ here = os.path.abspath(os.path.dirname(__file__))
 try:
     README = open(os.path.join(here, 'README.rst')).read()
 except IOError:
-    README = ""
+    README = ''
 try:
     TODO = open(os.path.join(here, 'TODO.rst')).read()
 except IOError:
-    TODO = ""
+    TODO = ''
 try:
     CHANGES = open(os.path.join(here, 'CHANGES.rst')).read()
 except IOError:
-    CHANGES = ""
+    CHANGES = ''
 
 install_requires = [
-    "Kotti>=0.8dev",
-    "js.bootstrap_image_gallery",
+    'Babel',
+    'Kotti>=0.8dev',
+    'js.bootstrap_image_gallery',
+    'lingua>=1.3',
+
 ]
 tests_require = [
-    "pytest",
-    "WebTest",
-    "wsgi_intercept",
-    "zope.testbrowser",
+    'pytest',
+    'WebTest',
+    'wsgi_intercept',
+    'zope.testbrowser',
 ]
 
 setup(
     name='kotti_gallery',
     version=version,
-    description="Add an image gallery to your Kotti site",
+    description='Add an image gallery to your Kotti site',
     long_description=README + '\n\n' + TODO + '\n\n' + CHANGES,
     classifiers=[
-        "Programming Language :: Python",
-        "Framework :: Pylons",
-        "Topic :: Internet :: WWW/HTTP",
-        "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
-        "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
-        "License :: Repoze Public License",
+        'Programming Language :: Python',
+        'Framework :: Pylons',
+        'Topic :: Internet :: WWW/HTTP',
+        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+        'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
+        'License :: Repoze Public License',
     ],
     keywords='image gallery bootstrap kotti cms pylons pyramid',
     author='Andreas Kaiser',

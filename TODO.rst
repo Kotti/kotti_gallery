@@ -1,4 +1,6 @@
 TODO
 ====
 
--   add support for remote galleries (e.g. flickr photosets)
+-   Add i18n.
+
+-   Add support for remote galleries (e.g. flickr photosets).

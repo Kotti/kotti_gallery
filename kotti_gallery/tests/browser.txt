@@ -84,9 +84,3 @@ View gallery
 
   >>> browser.open(testing.BASE_URL + '/my-gallery/')
   >>> pos = browser.contents.index
-  >>> pos("Image 1") < pos("Image 2")
-  True
-  >>> "A beautiful image" in browser.contents
-  True
-  >>> "An even more beautiful image" in browser.contents
-  True

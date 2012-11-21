@@ -10,6 +10,8 @@ CHANGES
 
 -   Depend on Kotti>=0.8 and its new add / edit form classes.
 
+-   Add German translation.
+
 0.1
 ---
 

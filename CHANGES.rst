@@ -1,6 +1,11 @@
 CHANGES
 =======
 
+0.2.1
+-----
+
+-   Implement IDefaultWorkflow.
+
 0.2
 ---
 

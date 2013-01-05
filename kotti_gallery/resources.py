@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
 
+from kotti.interfaces import IDefaultWorkflow
 from kotti.resources import Content
 from sqlalchemy import Column
 from sqlalchemy import ForeignKey
 from sqlalchemy import Integer
+from zope.interface import implements
 
 from kotti_gallery import _
 
 
 class Gallery(Content):
+
+    implements(IDefaultWorkflow)
 
     id = Column(Integer, ForeignKey('contents.id'), primary_key=True)
 

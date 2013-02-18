@@ -41,8 +41,8 @@ for new features and that all tests pass before submitting pull requests.
 Running the test suite is as easy as running ``py.test`` from the source directory.
 
 
-.. |build status production| image:: https://travis-ci.org/Kotti/kotti_newsitem.png?branch=production
-.. |build status master| image:: https://travis-ci.org/Kotti/kotti_newsitem.png?branch=master
+.. |build status production| image:: https://travis-ci.org/Kotti/kotti_gallery.png?branch=production
+.. |build status master| image:: https://travis-ci.org/Kotti/kotti_gallery.png?branch=master
 .. _Bootstrap Image Gallery: http://blueimp.github.com/Bootstrap-Image-Gallery/
 .. _Find out more about Kotti: http://pypi.python.org/pypi/Kotti
 .. _Github repository: https://github.com/disko/kotti_gallery

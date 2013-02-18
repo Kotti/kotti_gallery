@@ -1,6 +1,8 @@
 kotti_gallery
 =============
 
+|build status production|
+
 This is an extension to the Kotti CMS that allows you to add image galleries to
 your Kotti site.
 
@@ -25,6 +27,8 @@ With this, you'll be able to add galleries in your site.
 Development
 -----------
 
+|build status master|
+
 Contributions to ``kotti_gallery`` are highly welcome.  Just clone its
 `Github repository`_ and submit your contributions as pull requests.
 
@@ -37,6 +41,8 @@ for new features and that all tests pass before submitting pull requests.
 Running the test suite is as easy as running ``py.test`` from the source directory.
 
 
+.. |build status production| image:: https://travis-ci.org/Kotti/kotti_newsitem.png?branch=production
+.. |build status master| image:: https://travis-ci.org/Kotti/kotti_newsitem.png?branch=master
 .. _Bootstrap Image Gallery: http://blueimp.github.com/Bootstrap-Image-Gallery/
 .. _Find out more about Kotti: http://pypi.python.org/pypi/Kotti
 .. _Github repository: https://github.com/disko/kotti_gallery

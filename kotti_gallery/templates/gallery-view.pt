@@ -10,9 +10,11 @@
     </p>
     <ul class="thumbnails" data-toggle="modal-gallery" data-target="#modal-gallery" data-selector=".thumbnail img">
       <li class="span${img_span}" tal:repeat="img images">
-        <a href="#" class="thumbnail">
-          <img src="${request.resource_url(img)}image/span${img_span}"
-               data-href="${request.resource_url(img)}image" alt="" />
+        <a href="#" class="thumbnail ratio"
+           style="background-image:url('${request.resource_url(img)}image/span${img_span}')">
+          <img src="${request.static_url('kotti_gallery:static/transparent.gif')}"
+               data-href="${request.resource_url(img)}image" alt=""
+               width="100%" height="100%" />
         </a>
       </li>
     </ul>

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from js.bootstrap_image_gallery import gallery
 from kotti.views.edit import ContentSchema
 from kotti.views.form import AddFormView
 from kotti.views.form import EditFormView
 from pyramid.view import view_config
 
 from kotti_gallery import _
+from kotti_gallery.fanstatic import kotti_gallery
 from kotti_gallery.resources import Gallery
 
 
@@ -71,7 +71,7 @@ class GalleryView(object):
                  renderer='templates/gallery-view.pt')
     def view(self):
 
-        gallery.need()
+        kotti_gallery.need()
 
         images = self.context.children_with_permission(self.request)
 

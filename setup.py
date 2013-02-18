@@ -3,7 +3,7 @@ import os
 from setuptools import find_packages
 from setuptools import setup
 
-version = '0.2.1'
+version = '0.2.2'
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -65,6 +65,11 @@ setup(
             ('**.py', 'lingua_python', None),
             ('**.zcml', 'lingua_xml', None),
             ('**.pt', 'lingua_xml', None),
+        ],
+    },
+    entry_points={
+        'fanstatic.libraries': [
+            'kotti_gallery = kotti_gallery:fanstatic.library',
         ],
     },
 )

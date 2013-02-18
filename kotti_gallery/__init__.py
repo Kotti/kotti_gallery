@@ -15,3 +15,4 @@ def kotti_configure(settings):
 
 def includeme(config):
     config.add_translation_dirs('kotti_gallery:locale')
+    config.add_static_view('static', 'kotti_gallery:static')

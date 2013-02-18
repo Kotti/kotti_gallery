@@ -1,6 +1,12 @@
 CHANGES
 =======
 
+0.2.2
+-----
+
+-   Pseudo-crop images with CSS to have all thumbs the same height in
+    gallery views.
+
 0.2.1
 -----
 

@@ -48,8 +48,8 @@ Add images
 ----------
 
   >>> import os
-  >>> from kotti_gallery import tests
-  >>> image = open(os.sep.join((os.path.dirname(tests.__file__), "sendeschluss.jpg"))).read()
+  >>> import kotti_gallery
+  >>> image = open(os.sep.join((os.path.dirname(kotti_gallery.__file__), "tests", "sendeschluss.jpg"))).read()
 
 Image 1
 

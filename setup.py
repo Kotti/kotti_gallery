@@ -69,7 +69,7 @@ setup(
     },
     entry_points={
         'fanstatic.libraries': [
-            'kotti_gallery = kotti_gallery:fanstatic.library',
+            'kotti_gallery = kotti_gallery.fanstatic:library',
         ],
     },
 )
